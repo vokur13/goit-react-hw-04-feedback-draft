@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Box } from '../components/Box';
 import { Section } from '../components/Section';
 import { FeedbackOptions } from '../components/FeedbackOptions';
@@ -12,7 +12,7 @@ export const App = () => {
   const [good, setGood] = useState(initialValue);
   const [neutral, setNeutral] = useState(initialValue);
   const [bad, setBad] = useState(initialValue);
-  const [total, setTotal] = useState(initialValue - 2);
+  const [total, setTotal] = useState(initialValue);
   const [positive, setPositive] = useState(initialValue);
 
   const countFeedback = e => {
