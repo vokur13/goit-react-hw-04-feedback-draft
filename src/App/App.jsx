@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Box } from '../components/Box';
 import { Section } from '../components/Section';
 import { FeedbackOptions } from '../components/FeedbackOptions';
@@ -38,20 +38,20 @@ export const App = () => {
 
   useEffect(() => {
     const total = good + neutral + bad;
-    document.title = `Total: ${total}`;
+    document.title = `Total Feedback Count: ${total}`;
   }, [good, neutral, bad]);
 
   useEffect(() => {
-    setTotal(prevState => prevState + 1);
+    setTotal(good + neutral + bad);
   }, [good, neutral, bad]);
 
   useEffect(() => {
     setPositive(((good / total) * 100).toFixed(2));
   }, [good, total]);
 
-  //   const countPositiveFeedbackPercentage = () => {
-  //     setPositive(((good / total) * 100).toFixed(2));
-  //   };
+  function checkForData() {
+    return good > 0 ?? neutral > 0 ?? bad > 0;
+  }
 
   return (
     <>
@@ -68,25 +68,16 @@ export const App = () => {
         </Box>
         <Box p={2} width="50%" as="section">
           <Section title="Statistics">
-            {/* {!this.checkForData() && (
-              <Notification message="There is no feedback" />
-            )} */}
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={total}
-              positivePercentage={positive}
-            />
-            {/* {this.checkForData() && (
+            {!checkForData() && <Notification message="There is no feedback" />}
+            {checkForData() && (
               <Statistics
                 good={good}
                 neutral={neutral}
                 bad={bad}
-                total={this.countTotalFeedback}
-                positivePercentage={this.countPositiveFeedbackPercentage}
+                total={total}
+                positivePercentage={positive}
               />
-            )} */}
+            )}
           </Section>
         </Box>
       </Box>
@@ -168,11 +159,3 @@ export const App = () => {
 //     );
 //   }
 // }
-
-// export const App = () => {
-//   return (
-//     <>
-//       <Feedback />
-//     </>
-//   );
-// };

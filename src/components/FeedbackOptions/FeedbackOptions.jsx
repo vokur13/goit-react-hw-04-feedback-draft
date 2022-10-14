@@ -14,6 +14,11 @@ export const FeedbackOptions = ({ handleFeedback }) => {
   );
 };
 
+FeedbackOptions.propTypes = {
+  options: PropTypes.object,
+  onLeaveFeedback: PropTypes.func,
+};
+
 // export const protoFeedbackOptions = ({ options, onLeaveFeedback }) => {
 //   return (
 //     <Box width={1} display="flex" alignItems="center">
@@ -32,8 +37,3 @@ export const FeedbackOptions = ({ handleFeedback }) => {
 //     </Box>
 //   );
 // };
-
-FeedbackOptions.propTypes = {
-  options: PropTypes.object,
-  onLeaveFeedback: PropTypes.func,
-};
