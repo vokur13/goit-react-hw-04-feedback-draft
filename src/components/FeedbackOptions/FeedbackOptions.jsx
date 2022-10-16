@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 // import { HiEmojiHappy } from 'react-icons/hi';
 
-export const FeedbackOptions = ({ handleFeedback }) => {
+export const FeedbackOptions = ({ options, handleFeedback }) => {
   return (
     <Box width={1} display="flex" alignItems="center">
       <Button onClick={handleFeedback}>Good</Button>
@@ -12,11 +12,27 @@ export const FeedbackOptions = ({ handleFeedback }) => {
       <Button onClick={handleFeedback}>Bad</Button>
     </Box>
   );
+  //   return (
+  //     <Box width={1} display="flex" alignItems="center">
+  //       {Object.entries(options).map(([key]) => {
+  //         return (
+  //           <Button
+  //             key={key}
+  //             onClick={() => {
+  //               handleFeedback(key);
+  //             }}
+  //           >
+  //             {key}
+  //           </Button>
+  //         );
+  //       })}
+  //     </Box>
+  //   );
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.object,
-  onLeaveFeedback: PropTypes.func,
+  //   options: PropTypes.object,
+  //   onLeaveFeedback: PropTypes.func,
 };
 
 // export const protoFeedbackOptions = ({ options, onLeaveFeedback }) => {

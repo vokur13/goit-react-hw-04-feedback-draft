@@ -64,6 +64,10 @@ export const App = () => {
               bad={bad}
               handleFeedback={countFeedback}
             />
+            {/* <FeedbackOptions
+              options={(good, neutral, bad)}
+              handleFeedback={countFeedback}
+            /> */}
           </Section>
         </Box>
         <Box p={2} width="50%" as="section">
