@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from 'components/Box';
 import { StatItem, StatText } from './Statistics.styled';
@@ -32,9 +31,9 @@ export const Statistics = ({
 };
 
 Statistics.propTypes = {
-  //   good: PropTypes.number.isRequired,
-  //   neutral: PropTypes.number.isRequired,
-  //   bad: PropTypes.number.isRequired,
-  //   total: PropTypes.func.isRequired,
-  //   positivePercentage: PropTypes.func.isRequired,
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.string,
 };
